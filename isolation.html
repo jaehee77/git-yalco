@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isolation</title>
+</head>
+<body>
+    <div class="page">
+        <div class="isolation-section">
+            <div class="isolation">
+                <p>The <code>isolation</code> property is used to create a new stacking context without any other side effects</p>
+            </div>
+            <div class="isolation">
+                <p>The <code>isolation</code> property is used to create a new stacking context without any other side effects</p>
+            </div>
+            <div class="isolation">
+                <p>The <code>isolation</code> property is used to create a new stacking context without any other side effects</p>
+            </div>
+        </div>
+
+
+        <div class="inset-section">
+            <div class="wrapper">
+                <h2 class="section-title">Inset</h2>
+                <p>The <code>inset</code> property is part of the logical property spec</p>
+                <div class="inset"><strong>simple example</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner2"></div>
+    </div>
+
+    <style>
+        body {
+            color: #fff2f2;
+            background-color: #222;
+        }
+        .page {
+            padding: 100px;
+        }
+        code {
+            background: #ccc;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .isolation-section {
+            padding: 40px;
+            background-color: #222;
+        }
+
+        /* 배경 컬러와 따옴표의 z-index 음수로 인해 따옴표가 보이지 않는데
+            여기서 isolation 을 정의하여 격리시키면 z-index 가 
+            isolation-section 뒤로 z-index 가 영향을 받지 않도록 격리시킬 수 있다.
+        */
+        .isolation {
+            position: relative;
+            color: #fff2f2;
+            isolation: isolate;
+            margin-block: 40px;
+        }
+        .isolation::before {
+            content: open-quote;
+            font-family: serif;
+            font-weight: 900;
+            font-size: 15rem;
+            color: #3c3c3c;
+            position: absolute;
+            top: -2.5rem;
+            left: -2.5rem;
+            z-index: -1;
+        }
+        .isolation:after {
+            content: no-close-quote;
+        }
+
+        .inset-section {
+            position: relative;
+            border: 5px dotted yellow;
+            padding: 60px; 
+        }
+        .inset {
+            position: absolute;
+            /* top: 1rem;
+            right: 2rem;
+            bottom: 1rem;
+            left: 50%; */
+            /* inset: 1rem 2rem 1rem 50%; */
+            inset: auto 1rem 2rem 1rem;
+            padding: 1rem;
+            background-color: red;  
+        }
+
+        .outer {
+            background-color: green;
+            padding: 10px;
+            /* contain: size; */
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .inner2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</body>
+</html>

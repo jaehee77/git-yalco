@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent { 
+            height: 2000px; 
+        }
+
+        .myElement {
+            position: sticky;
+            top: -1px;
+        }
+
+        /* styles for when the header is in sticky mode */
+        .myElement.is-pinned {
+            color: red;
+        } 
+    </style>
+</head>
+<body>
+    
+    <div id="parent">
+  
+        <br />  <br />  <br />  <br />
+        <div class="myElement">Hello!</div>
+        
+        <br />  <br />  <br />  <br />
+        <div class="myElement">Hello!</div>
+        
+        <br />  <br />  <br />  <br />
+        <div class="myElement">Hello!</div>
+        
+        <br />  <br />  <br />  <br />
+        <div class="myElement sss">Hello!</div>
+        
+      </div> 
+<!-- 사이즈 28*28 small, 40*40 medium, 64*64 large -->
+<!-- <div class="com-spinner-pp medium">
+    <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="20" />
+    </svg>
+</div> -->
+
+    <script>
+        const els = document.querySelectorAll(".myElement")
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                entry.target.classList.remove('is-pinned');
+                entry.target.classList.toggle("is-pinned", entry.intersectionRatio < 1);
+                console.log(entry)
+             })
+            },
+            
+            { threshold: [1] }
+        );
+
+        // observer.observe(el);
+
+        els.forEach((el) => observer.observe(el));
+
+
+    </script>
+</body>
+</html>

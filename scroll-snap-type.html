@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only CSS 스크롤 애니메이션</title>
+</head>
+<body>
+
+    <div class="container">
+        <section>section1</section>
+        <section>section2</section>
+        <section>section3</section>
+        <section>section4</section>
+        <section>section5</section>
+    </div>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            overflow: scroll;
+            height: 100vh;
+            width: 50vw;
+            /* scroll-snap-type: y mandatory; */
+            scroll-snap-type: y proximity; /* 다른 섹션에 가까워졌을 때 스냅됨 */
+        }
+        section {   
+            scroll-snap-align: end;
+
+            height: 100vh;
+            font-size: 72px;
+            color: dodgerblue;
+            display: grid;
+            place-content: center;
+            transition: all 3s ease;
+        }
+
+        section:nth-child(1) {
+            background-color: lightblue;
+        }
+        section:nth-child(2) {
+            background-color: lightcoral;
+        }
+        section:nth-child(3) {
+            background-color: lightgreen;
+        }
+        section:nth-child(4) {
+            background-color: lightsalmon;
+        }
+        section:nth-child(5) {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</body>
+</html>

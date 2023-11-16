@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid</title>
+	<link rel="stylesheet" href="default.css">
+	<style>
+	/* auto-fill, auto-fit */
+	.grid-container {
+		display: grid;
+		/* grid-template-columns: repeat(auto-fill, minmax(25%, auto)); */
+		/* grid-template-columns: repeat(auto-fill, minmax(200px, auto)); */
+		/* grid-template-columns: repeat(auto-fit, minmax(200px, auto)); */
+
+
+		grid-template-columns: repeat(auto-fit, minmax(20%, auto));
+	}
+	/* fill 과 fit 의 차이점은 채울 갯수가 모자랄 경우 fit 은 알아서 채우지만
+		fill 은 모자라면 모자란 대로 채우지 않는다.
+		픽셀값을 사용하면 반응형처럼 여러 단을 사용할 수 있다.
+	*/
+	</style>
+</head>
+<body>
+	<div class="grid-container">
+		<div class="grid-item">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item">C</div>
+		<!-- <div class="grid-item">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div> -->
+	</div>
+</body>
+</html>

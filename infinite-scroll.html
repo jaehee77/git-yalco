@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한 스크롤 애니메이션</title>
+
+    <style>
+        :root {
+            --clr-neutral-100: hsl(0, 0%, 100%);
+            --clr-primary-100: hsl(205, 15%, 58%);
+            --clr-primary-400: hsl(215, 25%, 27%);
+            --clr-primary-800: hsl(217, 33%, 17%);
+            --clr-primary-900: hsl(218, 33%, 9%);
+        }
+        * {
+            margin: 0;
+        }
+        html {
+            color-scheme: dark;
+        }
+        body {
+            display: grid;
+            /* height: 100vh; */
+            min-block-size: 100vh;
+            place-content: center;
+            font-family: system-ui;
+            font-size: 1.124rem;
+            background-color: var(--clr-primary-800);
+        }
+        h1 {
+            -webkit-text-stroke: 1px;
+        }
+        .tag-list {
+            padding-inline: 0;
+            list-style: none;
+        }
+
+        .tag-list li {
+            padding: 1rem;
+            background: var(--clr-primary-400);
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);
+        }
+        .scroller {
+            max-width: 600px;
+
+            overflow: hidden;
+            border: 2px solid orchid;
+
+            margin-block: 1rem;
+
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent)
+
+        }
+        .scroller__inner {
+            margin-block: 1rem;
+            border-top: 5px solid lime;
+            padding-block: 1rem;
+            display: flex;
+            gap: 1rem;
+            
+            flex-wrap: nowrap;
+            width: max-content;
+
+            animation: scroll 20s linear infinite;
+            /* transform: translate(-.5rem); */
+        }
+
+        @keyframes scroll {
+            to {
+                /* 두번째 덩어리 반복까지만 보여주기위해 -50% 까지만 이동시키고 */
+                /* 다시 첫번재 덩어리가 infinite 에 의해 보여주게 된다. */
+                transform: translate(calc(-50% - .5rem));
+            }
+        }
+        .test {
+            background: red !important; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center">Infinite Scroll Animation</h1>
+
+    <div class="scroller" data-speed="fast">
+        <ul class="tag-list scroller__inner">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>SSG</li>
+            <li>webdev</li>
+            <li>animation</li>
+            <li>UI/UX</li>
+            <!-- <li class="test">HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>SSG</li>
+            <li>webdev</li>
+            <li>animation</li>
+            <li>UI/UX</li> -->
+        </ul>
+    </div>
+
+
+    <div class="scroller" data-direction="right" data-speed="slow">
+        <div class="scroller__inner">
+            <img src="https://i.pravatar.cc/150?img=1" alt="" />
+            <img src="https://i.pravatar.cc/150?img=2" alt="" />
+            <img src="https://i.pravatar.cc/150?img=3" alt="" />
+            <img src="https://i.pravatar.cc/150?img=4" alt="" />
+            <img src="https://i.pravatar.cc/150?img=5" alt="" />
+            <img src="https://i.pravatar.cc/150?img=6" alt="" />
+        </div>
+    </div>
+
+
+    <script>
+
+        const scrollers = document.querySelectorAll('.scroller');
+
+        scrollers.forEach(scroller => {
+            const scrollerInner = scroller.querySelector('.scroller__inner');
+            const scrollerContent = Array.from(scrollerInner.children);
+
+            scrollerContent.forEach(item => {
+                const duplicatedItem = item.cloneNode(true);
+                duplicatedItem.setAttribute('aria-hidden', 'true');
+
+                scrollerInner.appendChild(duplicatedItem);
+            })
+        })
+
+    </script>
+    
+</body>
+</html>

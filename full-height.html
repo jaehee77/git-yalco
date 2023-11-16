@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: #333;
+            margin: 0;
+            font-size: 2rem;
+           
+        }
+        .card {
+            background: white;
+            height: 600px;
+            max-width: 600px;
+            border:2px solid black;
+            border-radius: .25rem;
+            /* overflow: hidden; */
+
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            border-bottom: 2px solid black;
+            text-align: center;
+            padding: .5rem;
+            background: #ddd;
+
+            /* height: 100%; */
+        }
+        .footer {
+            border-top: 2px solid black;
+            text-align: center;
+            padding: .5rem;
+            background: #ddd;
+
+            /* height: 100%; */
+        }
+        .body {
+            padding: .5rem;
+            /* flex 일 경우 부모 높이를 고려해 자식요소들이 높이 100% 하면 나눠서 꽉가짐 */
+            /* 헤더가 100px이고 footer 가 100px이면 height: 100% 인 요소는 남은 공간 모두 다 가짐 */
+            /* 헤더,바디,푸터 높이가 모두 100% 라면 균할분등하여 남은공간을 채우면서 가짐 */
+            height: 100%;
+
+            /* flex-grow: 1; */
+            overflow-y: auto;
+        }
+        
+        .horizontal {
+            background: white;
+            width: 800px;
+            border:2px solid black;
+            border-radius: .25rem;
+
+            display: flex;
+        }
+        .h-header {
+            border-bottom: 2px solid black;
+            text-align: center;
+            padding: .5rem;
+            background: #ddd;
+
+            /* width: 100%; */
+            /* width: 200px;
+            flex-shrink: 0; */
+            flex-basis: 250px;
+        }
+        .h-body {
+            padding: .5rem;
+            /* width: 100%; */
+        }
+        .h-footer {
+            border-top: 2px solid black;
+            text-align: center;
+            padding: .5rem;
+            background: #ddd;
+            width: 300px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+        <div class="header">Header</div>
+        <div class="body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laboriosam molestias soluta corrupti impedit nemo!
+        </div>
+
+        <div class="footer">Footer</div>
+    </div>
+<br>
+<br>
+
+    <div class="horizontal">
+        <div class="h-header">Header 22</div>
+        <div class="h-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laboriosam molestias soluta corrupti impedit nemo!
+        </div>
+
+        <div class="h-footer">Footer 22</div>
+    </div>
+
+</body>
+</html>

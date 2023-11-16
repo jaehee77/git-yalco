@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="text-align: center">Infinite Scroll Animation</h1>
+
+<div class="scroller" data-speed="fast">
+  <ul class="tag-list scroller__inner">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JS</li>
+    <li>XML</li>
+    <li>WEBDEV</li>
+    <li>animation</li>
+    <li>UI/UX</li>
+
+    <!-- <li class="test">HTML</li>
+    <li>CSS</li>
+    <li>JS</li>
+    <li>XML</li>
+    <li>WEBDEV</li>
+    <li>animation</li>
+    <li class="last">UI/UX</li> -->
+  </ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="scroller" data-direction="right" data-speed="slow">
+  <div class="scroller__inner">
+    <img src="https://i.pravatar.cc/150?img=1" alt="" />
+    <img src="https://i.pravatar.cc/150?img=2" alt="" />
+    <img src="https://i.pravatar.cc/150?img=3" alt="" />
+    <img src="https://i.pravatar.cc/150?img=4" alt="" />
+    <img src="https://i.pravatar.cc/150?img=5" alt="" />
+    <img src="https://i.pravatar.cc/150?img=6" alt="" />
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="scroller" data-direction="right" style="--_animation-duration: 5000ms">
+    <div class="scroller__inner">
+      <img src="https://i.pravatar.cc/150?img=7" alt="" />
+      <img src="https://i.pravatar.cc/150?img=8" alt="" />
+      <img src="https://i.pravatar.cc/150?img=9" alt="" />
+      <img src="https://i.pravatar.cc/150?img=10" alt="" />
+      <img src="https://i.pravatar.cc/150?img=11" alt="" />
+      <img src="https://i.pravatar.cc/150?img=12" alt="" />
+    </div>
+  </div>
+    
+
+    <style>
+
+        :root {
+            --clr-neutral-100: hsl(0, 0%, 100%);
+            --clr-primary-100: hsl(205, 15%, 58%);
+            --clr-primary-400: hsl(215, 25%, 27%);
+            --clr-primary-800: hsl(217, 33%, 17%);
+            --clr-primary-900: hsl(218, 33%, 9%);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            color-scheme: dark;
+        }
+
+        body {
+            display: grid;
+            min-block-size: 100vh;
+            place-content: center;
+            font-family: system-ui;
+            font-size: 1.125rem;
+            background-color: var(--clr-primary-800);
+        }
+
+        .tag-list {
+            margin: 0;
+            padding-inline: 0;
+            list-style: none;
+        }
+
+        .tag-list li {
+            padding: 1rem;
+            background: var(--clr-primary-400);
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);
+        }
+
+        .scroller {
+            max-width: 600px;
+            border: 3px solid lime;
+
+
+
+            
+            overflow: hidden;
+            /* -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); */
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+
+        .scroller__inner {
+            padding-block: 1rem;
+            display: flex;
+            /* flex-wrap: wrap; */
+            gap: 1rem;
+            
+
+            flex-wrap: nowrap;
+            width: max-content; /* max-content 중요 */
+
+            /* animation: scroll 10s linear infinite; */
+            /* transform 테스트용 */
+            /* transform: translate(-51%) */
+            /* transform: translate(calc(-50% - .5rem)); */
+        }
+
+        .scroller[data-animated="true"] {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+        .scroller[data-animated="true"] .scroller__inner {
+            width: max-content;
+            flex-wrap: nowrap;
+            animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+            
+            
+            border-top: solid lime;
+        }
+
+        @keyframes scroll {
+            to {
+                /* 10개 아이템의 -50% 위치는 gap 사이에 있음(gap 중간에), gap 이 1rem 이므로 -.5rem 좌측으로 이동시키면 딱 맞음 */
+                transform: translate(calc(-50% - .5rem));
+                /* transform: translate(calc(-50.5%)) */
+            }
+        }
+        .scroller[data-direction="right"] {
+            --_animation-direction: reverse;
+        }
+        .scroller[data-direction="left"] {
+            --_animation-direction: forwards;
+        }
+        .scroller[data-speed="slow"] {
+            --_animation-duration : 120s;
+        }
+        .scroller[data-speed="fast"] {
+            --_animation-duration : 20s;
+        }
+
+        .test {
+            background: red !important; 
+        }
+        .last {
+            background: dodgerblue !important; 
+        }
+
+
+
+        
+    </style>
+
+    <script>
+        const scrollers = document.querySelectorAll(".scroller");
+
+
+        scrollers.forEach(scroller => {
+            scroller.dataset.animated = true;
+
+            const scrollerInner = scroller.querySelector(".scroller__inner");
+            // console.log(scrollerInner.children);
+
+            // from => 유사배열 객체 or 순회가능한 객체를 배열로 만들기 
+            // console.log(Array.from(scrollerInner.children));
+            const scrollContent = Array.from(scrollerInner.children);
+
+            scrollContent.forEach( item => {
+                // console.log(item);
+                // Node 인터페이스의 cloneNode() 메서드는 이 메서드가 호출된 노드의 복제본을 반환하고,
+                // 이 매개변수는 노드에 포함된 하위 트리도 복제할지 복제안할지를 제어합니다.
+                const duplicatedItem = item.cloneNode(true);
+                duplicatedItem.setAttribute("aria-hidden", true);
+                scrollerInner.appendChild(duplicatedItem);
+            })
+        });
+
+
+
+        // If a user hasn't opted in for recuded motion, then we add the animation
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            //  addAnimation();
+        }
+
+        function addAnimation() {
+            scrollers.forEach((scroller) => {
+                // add data-animated="true" to every `.scroller` on the page
+                scroller.setAttribute("data-animated", true);
+
+                // Make an array from the elements within `.scroller-inner`
+                const scrollerInner = scroller.querySelector(".scroller__inner");
+                const scrollerContent = Array.from(scrollerInner.children);
+
+                console.log(scrollerContent);
+
+                // For each item in the array, clone it
+                // add aria-hidden to it
+                // add it into the `.scroller-inner`
+                scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    console.log(duplicatedItem);
+                    duplicatedItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicatedItem);
+                });
+            });
+        }
+
+    </script>
+</body>
+</html>

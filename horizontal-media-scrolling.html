@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal media scrolling</title>
+
+    <style>
+        @import "https://unpkg.com/open-props";
+        @import "https://unpkg.com/open-props/normalize.min.css";
+        
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="container flow">
+          <h1 class="page-title">Horizontal scrolling</h1>
+          <p class="page-subtitle">Let's create a horizontal media scroller!</p>
+        </div>
+      </header>
+      
+      <h2 class="section-title">Individual elements</h2>
+      
+      <div class="media-scroller snaps-inline">
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA5MTJfOTIg%2FMDAxNjk0NDg0MTU2MzE3.slOHA4zp2CHIRS2YyNr87qfnNh0sAOVbnH_-yOZBaEcg.aPGCKj0Mx_NJSlLhXsXQMXUPOTduZfNl4JKnIevbclAg.JPEG.fusionvi2%2F12.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Short title</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjJfMjIg%2FMDAxNjkyNjk3NjkzNDYy.Vzac8ssNA_aCf_gWoYnnTGYF1PkOOW8onzfTeMW43d4g.hgM_dCdPOFFSgHkHsXMEiqQPSC0YE_PUpLgbJRv-z9Ag.JPEG.sacuu%2Fabf474d488a1271d4c5781c801ad8696.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">A longer title here</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjlfMjcx%2FMDAxNjkzMjQyODE2MDY1.kQlPQLu-b-uG4knVs4DFQhJr51wapc-pqo6AZzsONOYg.9LYSsf_qydhWCzOjO0IPZP1yFc5Y1eDsxiaSNImQYBgg.PNG.sajahome%2FAI%EC%A3%BC%EB%B0%A9_%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4_%EB%9E%9C%EC%84%A0%EC%A7%91%EB%93%A4%EC%9D%B4.png%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">An even longer title on this one</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fpost.phinf%2FMjAyMzEwMDdfNTQg%2FMDAxNjk2NjcxNDE1NzE2.WJ7BCcfQbxCY7XY6a4OOp15dPr7W7zyGW4LvQaPyw2gg.vpngqv0WlB8oV6VjwBzvRDcGjNWE3EqC2iOnq4u6Ujkg.JPEG%2FIlx1vNedUkkN1WUr5VS2DhRs1geo.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">A dog that's blinking?</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMDRfMjIg%2FMDAxNjk2NDEwMDk2OTE1.Ik6eYDBEj6uKvy8qK9ChIdUZgoRpl2HBn1ei4BqAOMsg.JyrgTv1FC-uuI11yC7kfKUDwRe_TLvsp_hA3EPRunAUg.JPEG.ryuumji%2FIMG_6518.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Chair</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fpost.phinf%2FMjAyMzEwMDJfMTA3%2FMDAxNjk2MjIzMzEyMjM1.LkMIH_OeXpWVH_V8mzhzKFz9HtNUn-tQiGycbvx0eucg.CjuVb_tKt80trTFENKEUstAGI0iNcnxE_PQAuQsrNMQg.JPEG%2FIRCBzJFzpQRAOnVLVQtiQqteNKAA.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Ut enim ad minim veniam</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231019_160%2F1697696581320dfeFc_PNG%2Fw.PNG%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Duis aute irure dolor</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MDZfMTk4%2FMDAxNjkxMzMwOTIyMTE3.aDF6pox1d1qgQPZMARjSF4Dg3ZuKu6mf2gZWdKYMom4g.FnXg1pGdGxILNotF5Qac-OrByXOM7Mu7D43Q5E3FnYEg.JPEG.only_mira%2F6.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Cillum dolore eu</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fhappybean-phinf.pstatic.net%2F20230925_294%2F1695608754884j1isc_JPEG%2Fthum.jpg%3Ftype%3Df464_260%22&type=ff364_236&service=navermain" alt="">
+          <p class="title"></p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231018_12%2F1697613793581ezjKT_JPEG%2FDSC03230.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Excepteur sint occaecat cupidatat non proident</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA5MzBfMjEx%2FMDAxNjk2MDYwMzkzNDA5.wgbGPZxwy0NBkDBvbbkqTHI5-73izwSJb9ah0anE73Yg.5k_fxghJohkLrTK5oZGMIjhyx1YYupmCjCx-DM1a388g.JPEG.flute8248%2Fk1.JPG%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">At lectus urnaVestibulum</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA5MTFfNjcg%2FMDAxNjk0Mzk1MDkyMzUz.Wy7BH2brmA_nCLP2zMHo1PU_zcbx3d2ElVowqh58BfEg.KLQfHcJ5zxVR3D1bY8j_5lJ-d5wEKHIAzUeadVRoNg4g.JPEG.1004najjang%2F%E4%BA%8C%EC%87%B0%EA%B0%91%EF%BF%BD%EC%94%A4%EF%BF%BD%EB%80%92%E7%94%B1%D1%8A%EB%BC%B1.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Vestibulum</p>
+        </div>
+        <div class="media-element">
+          <img src="https://naverpa-phinf.pstatic.net/MjAyMzA3MTlfNzYg/MDAxNjg5NzQ4MjQyNTI1.J9kYaunh2fhziHLMLD-DAXjerIrUCEsjIfYfarMEXREg.L0x3WV6DP0VzeNXJ9yEqDucgPBw7yVZ9EsLl54AdVRYg.JPEG/3_16897482425175105997353409283949.jpg" alt="">
+          <p class="title">Adipiscing tristique risus nec feugiat</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA3MjhfMjU0%2FMDAxNjkwNTIyOTk5ODM1.vI1y6tFb1QSTXrFaCUfiITwdtcHyQBryvkAqB35QRoMg.hmptY4uRckjt9HGrtca_WkACRXaz1rBORVNv1mSkZBUg.JPEG.litty28%2FPCD_1311IMG_2882.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Rutrum tellus pellentesque eu tincidunt</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fhappybean-phinf.pstatic.net%2F20230920_67%2F16951899544937AN2s_JPEG%2F%25A6%25E1%25A9%25E1_%25A5%25E1%25B9%25E1%25B3%25E1-3_%25A9%25E1%25A8%25E111.jpg%3Ftype%3Df464_260%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Bibendum enim</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fhappybean-phinf.pstatic.net%2F20230922_208%2F1695342722790mYtMh_JPEG%2Fthum.jpg%3Ftype%3Df464_260%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Amet commodo</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjNfMTg2%2FMDAxNjkyNzc0OTIzOTU2.UFyGrjjGU-tIpak2lK6aSF6sKSA2zqIufUs0KGWSxSQg.gI8Ihkh3Pa0P0i_Y6gDvKKrOKEpEkzai1RhBbcoVaycg.JPEG.forest-bubu%2F169243300948534444.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">A erat nam at lectus</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231018_258%2F1697613546273FUcTK_PNG%2Fser.PNG%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Pellentesque eu tincidunt tortor aliquam nulla</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fpost.phinf%2FMjAyMzA2MjZfMjQ5%2FMDAxNjg3NzYyNjU5ODc4.3dMLBeGYOjb_jQNqJjpG7OVgMRwQLE-u-Qu4e6pch-Ig.F0g2EzpFsoWFa2Ba5XZcx7NacdxhXWnLplOrviCK4MIg.JPEG%2FIyzyro_7lytrvEWLCKU_-O4l0Hsk.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Quam adipiscing vitae</p>
+        </div>
+        <div class="media-element">
+          <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231018_139%2F1697613941679RpvPR_JPEG%2FKakaoTalk_20231010_215445213_10.jpg%22&type=ff364_236&service=navermain" alt="">
+          <p class="title">Fermentum</p>
+        </div>
+      </div>
+      
+      <h2 class="section-title">Groups elements</h2>
+      <div class="media-scroller media-scroller--with-groups snaps-inline">
+      
+        <!--   Group 1 -->
+        <div class="media-group">
+          <div class="media-element">
+            <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA5MTJfOTIg%2FMDAxNjk0NDg0MTU2MzE3.slOHA4zp2CHIRS2YyNr87qfnNh0sAOVbnH_-yOZBaEcg.aPGCKj0Mx_NJSlLhXsXQMXUPOTduZfNl4JKnIevbclAg.JPEG.fusionvi2%2F12.jpg%22&type=ff364_236&service=navermain" alt="">
+          </div>
+          <div class="media-element">
+            <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjJfMjIg%2FMDAxNjkyNjk3NjkzNDYy.Vzac8ssNA_aCf_gWoYnnTGYF1PkOOW8onzfTeMW43d4g.hgM_dCdPOFFSgHkHsXMEiqQPSC0YE_PUpLgbJRv-z9Ag.JPEG.sacuu%2Fabf474d488a1271d4c5781c801ad8696.jpg%22&type=ff364_236&service=navermain" alt="">
+          </div>
+          <div class="media-element">
+            <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjlfMjcx%2FMDAxNjkzMjQyODE2MDY1.kQlPQLu-b-uG4knVs4DFQhJr51wapc-pqo6AZzsONOYg.9LYSsf_qydhWCzOjO0IPZP1yFc5Y1eDsxiaSNImQYBgg.PNG.sajahome%2FAI%EC%A3%BC%EB%B0%A9_%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4_%EB%9E%9C%EC%84%A0%EC%A7%91%EB%93%A4%EC%9D%B4.png%22&type=ff364_236&service=navermain" alt="">
+          </div>
+          <div class="media-element">
+            <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fpost.phinf%2FMjAyMzEwMDdfNTQg%2FMDAxNjk2NjcxNDE1NzE2.WJ7BCcfQbxCY7XY6a4OOp15dPr7W7zyGW4LvQaPyw2gg.vpngqv0WlB8oV6VjwBzvRDcGjNWE3EqC2iOnq4u6Ujkg.JPEG%2FIlx1vNedUkkN1WUr5VS2DhRs1geo.jpg%22&type=ff364_236&service=navermain" alt="">
+          </div>
+          <div class="media-element">
+            <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMDRfMjIg%2FMDAxNjk2NDEwMDk2OTE1.Ik6eYDBEj6uKvy8qK9ChIdUZgoRpl2HBn1ei4BqAOMsg.JyrgTv1FC-uuI11yC7kfKUDwRe_TLvsp_hA3EPRunAUg.JPEG.ryuumji%2FIMG_6518.jpg%22&type=ff364_236&service=navermain" alt="">
+          </div>
+        </div>
+      
+        <!-- Group 2   -->
+        <div class="media-group">
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fpost.phinf%2FMjAyMzEwMDJfMTA3%2FMDAxNjk2MjIzMzEyMjM1.LkMIH_OeXpWVH_V8mzhzKFz9HtNUn-tQiGycbvx0eucg.CjuVb_tKt80trTFENKEUstAGI0iNcnxE_PQAuQsrNMQg.JPEG%2FIRCBzJFzpQRAOnVLVQtiQqteNKAA.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231019_160%2F1697696581320dfeFc_PNG%2Fw.PNG%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MDZfMTk4%2FMDAxNjkxMzMwOTIyMTE3.aDF6pox1d1qgQPZMARjSF4Dg3ZuKu6mf2gZWdKYMom4g.FnXg1pGdGxILNotF5Qac-OrByXOM7Mu7D43Q5E3FnYEg.JPEG.only_mira%2F6.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fhappybean-phinf.pstatic.net%2F20230925_294%2F1695608754884j1isc_JPEG%2Fthum.jpg%3Ftype%3Df464_260%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231018_12%2F1697613793581ezjKT_JPEG%2FDSC03230.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+        </div>
+      
+        <!-- Group 3   -->
+        <div class="media-group">
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231018_12%2F1697613793581ezjKT_JPEG%2FDSC03230.jpg%22&type=ff364_236&service=navermain" alt="">
+              </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA5MzBfMjEx%2FMDAxNjk2MDYwMzkzNDA5.wgbGPZxwy0NBkDBvbbkqTHI5-73izwSJb9ah0anE73Yg.5k_fxghJohkLrTK5oZGMIjhyx1YYupmCjCx-DM1a388g.JPEG.flute8248%2Fk1.JPG%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA5MTFfNjcg%2FMDAxNjk0Mzk1MDkyMzUz.Wy7BH2brmA_nCLP2zMHo1PU_zcbx3d2ElVowqh58BfEg.KLQfHcJ5zxVR3D1bY8j_5lJ-d5wEKHIAzUeadVRoNg4g.JPEG.1004najjang%2F%E4%BA%8C%EC%87%B0%EA%B0%91%EF%BF%BD%EC%94%A4%EF%BF%BD%EB%80%92%E7%94%B1%D1%8A%EB%BC%B1.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://naverpa-phinf.pstatic.net/MjAyMzA3MTlfNzYg/MDAxNjg5NzQ4MjQyNTI1.J9kYaunh2fhziHLMLD-DAXjerIrUCEsjIfYfarMEXREg.L0x3WV6DP0VzeNXJ9yEqDucgPBw7yVZ9EsLl54AdVRYg.JPEG/3_16897482425175105997353409283949.jpg" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA3MjhfMjU0%2FMDAxNjkwNTIyOTk5ODM1.vI1y6tFb1QSTXrFaCUfiITwdtcHyQBryvkAqB35QRoMg.hmptY4uRckjt9HGrtca_WkACRXaz1rBORVNv1mSkZBUg.JPEG.litty28%2FPCD_1311IMG_2882.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+        </div>
+      
+        <!--  Group 4  -->
+        <div class="media-group">
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fhappybean-phinf.pstatic.net%2F20230922_208%2F1695342722790mYtMh_JPEG%2Fthum.jpg%3Ftype%3Df464_260%22&type=ff364_236&service=navermain" alt="">
+              </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjNfMTg2%2FMDAxNjkyNzc0OTIzOTU2.UFyGrjjGU-tIpak2lK6aSF6sKSA2zqIufUs0KGWSxSQg.gI8Ihkh3Pa0P0i_Y6gDvKKrOKEpEkzai1RhBbcoVaycg.JPEG.forest-bubu%2F169243300948534444.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231018_258%2F1697613546273FUcTK_PNG%2Fser.PNG%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fpost.phinf%2FMjAyMzA2MjZfMjQ5%2FMDAxNjg3NzYyNjU5ODc4.3dMLBeGYOjb_jQNqJjpG7OVgMRwQLE-u-Qu4e6pch-Ig.F0g2EzpFsoWFa2Ba5XZcx7NacdxhXWnLplOrviCK4MIg.JPEG%2FIyzyro_7lytrvEWLCKU_-O4l0Hsk.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+            <div class="media-element">
+                <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fshop.phinf%2F20231018_139%2F1697613941679RpvPR_JPEG%2FKakaoTalk_20231010_215445213_10.jpg%22&type=ff364_236&service=navermain" alt="">
+            </div>
+        </div>
+      
+      </div>
+</body>
+</html>
